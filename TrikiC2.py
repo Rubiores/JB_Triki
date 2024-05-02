@@ -10,6 +10,13 @@ ganador=False
 salida =False
 
 #funciones
+def fn_tableros(tmn): #Que tablero queremos ahora?
+    global tablero
+    if tmn == 3:
+      tablero = np.full((3, 3), '-')
+    elif tmn == 4:
+      tablero = np.full((4, 4), '-')
+
 def fn_imprimir(tablero,tmn): #Que tablero tan lindoo!
   print(" ")
   if tmn == 3:
@@ -186,11 +193,7 @@ while not salida:
   print(" ")
   tmn=int(input("Ingrese el tamaño de su tablero 3(3X3) 0 4(4x4): "))
   
-  if tmn == 3:
-      tablero = np.full((3, 3), '-')
-  elif tmn == 4:
-      tablero = np.full((4, 4), '-')
-
+  fn_tableros(tmn)
 
   while ganador==False:
     fn_imprimir(tablero,tmn)
