@@ -178,8 +178,6 @@ def seguimosJugando(): #Por que querian dejar de jugar?
       print("Gracias por participar!!")
       
       salida = True
-  
-  return salida
 
 # llamados-PROGRAMA PRINCIPAL
 
