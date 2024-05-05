@@ -12,10 +12,19 @@ salida =False
 #funciones
 def fn_tableros(tmn): #Que tablero queremos ahora?
     global tablero
+    global ganador
     if tmn == 3:
       tablero = np.full((3, 3), '-')
     elif tmn == 4:
       tablero = np.full((4, 4), '-')
+    else:
+      print('')
+      print(f"Por que elegiste como opción {tmn}" + " animalongo")
+      print('')
+      ganador = "No hubo"
+      tablero = []
+
+    return ganador
 
 def fn_imprimir(tablero,tmn): #Que tablero tan lindoo!
   print(" ")
@@ -163,6 +172,12 @@ def empate(tablero): #Acaso no quieren ganar?
     else:
         return False  # Si aún hay casillas vacías y no hay ganador, no hay empate
 
+def granganador(ganador): #El gran ganador fue
+  if ganador == "No hubo":
+    print("No puedo creer que hubo un empate, ¿Eso es posible?")
+  else:
+    print("El gran ganador de esta partida es el jugador " + ganador + "!!!")
+
 def seguimosJugando(): #Por que querian dejar de jugar?
   global salida
   rspt = int(input("¿Otra partida? 1(Si) 2(No) "))
@@ -207,7 +222,7 @@ while not salida:
   jb_quienGano(NX,NO)
   fn_imprimir(tablero,tmn)
   print(" ")
-  print("El gran ganador de esta partida es el jugador " + ganador + "!!!")
+  granganador(ganador)
  
   print(" ")
   seguimosJugando()
